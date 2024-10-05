@@ -12,7 +12,6 @@ git submodule init
 git submodule update
 
 # Copy example files over to Newsite
-cd ..
 cp -r themes/bookworm-light-hugo/exampleSite/. .
 ```
 
