@@ -6,10 +6,10 @@ hugo new site NewSite
 cd NewSite
 rm hugo.toml
 
-# Download the repo as a submodule
-cd NewSite/themes
-git init
-git submodule add https://github.com/TheHelpfulOtter/bookworm-light-hugo.git
+# Clone the repo as a submodule
+git submodule add https://github.com/TheHelpfulOtter/bookworm-light-hugo.git themes
+git submodule init
+git submodule update
 
 # Copy example files over to Newsite
 cd ..
