@@ -47,8 +47,9 @@
         <script>
           const apiBaseUrl = 'https://danielkuan.com'
           const apiVersion = 'v1'
+          const currentOrigin = window.location.origin
           
-          console.log('Current origin:', window.location.origin);
+          console.log('Current origin:', currentOrigin);
           console.log('API Base URL:', apiBaseUrl);
           
           // Check if this is first visit in this session to prevent double counting
@@ -58,7 +59,8 @@
             fetch(`${apiBaseUrl}/${apiVersion}/add_visitor`, {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Origin': currentOrigin
               }
             })
             .then(response => {
@@ -78,6 +80,9 @@
 
           fetch(`${apiBaseUrl}/${apiVersion}/get_visitor_count`, {
             method: 'GET',
+            headers: {
+              'Origin': currentOrigin
+            }
           })
           .then(response => {
             console.log('Get visitor count response:', response);
