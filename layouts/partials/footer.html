@@ -38,7 +38,6 @@
         <p class="mb-0 font-weight-500 copyright-text content">{{.| markdownify}}</p>
         {{ end }}
         
-        {{ if strings.HasPrefix .RelPermalink "/bookworm-light" }}
         <div>
           <p class="mt-2 font-weight-500">
             Daily Visitors: <span id="dailyVisitorCount">Loading...</span>
@@ -98,7 +97,6 @@
             document.getElementById('dailyVisitorCount').textContent = 'Unable to load';
           });
         </script>
-        {{ end }}
       </div>
     </div>
   </div>
